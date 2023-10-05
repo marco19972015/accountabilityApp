@@ -1,1 +1,11 @@
-<p>goal-list works!</p>
+<h2>Goal List</h2>
+<ul>
+    <!-- When we click our selected goal gets assigned a string -->
+    <li (click)="selectedGoal = 'Create template for app'">Create template for app</li>
+    <li (click)="selectedGoal = 'Take notes'">Take notes</li>
+    <li (click)="selectedGoal = 'Add comments to my code'">Add comments to my code</li>
+</ul>
+
+<!-- our goalName gets passed down from our selectedGoal clickevent (This approach is called input binding )-->
+<!-- our goalNames gets passed down into our detial component and html through our Input artifact -->
+<app-goal-detail [goalName]="selectedGoal"></app-goal-detail>
