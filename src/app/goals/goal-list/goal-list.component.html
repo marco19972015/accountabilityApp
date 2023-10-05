@@ -8,4 +8,4 @@
 
 <!-- our goalName gets passed down from our selectedGoal clickevent (This approach is called input binding )-->
 <!-- our goalNames gets passed down into our detial component and html through our Input artifact -->
-<app-goal-detail [goalName]="selectedGoal"></app-goal-detail>
+<app-goal-detail [goalName]="selectedGoal" (currentGoal)="onShow()"></app-goal-detail>

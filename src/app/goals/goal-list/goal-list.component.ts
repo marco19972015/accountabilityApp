@@ -12,4 +12,7 @@ export class GoalListComponent {
   // Create a selectedGoal property set to an empty string
   selectedGoal = '';
 
+  onShow() {
+    window.alert(`You just selected ${this.selectedGoal}`)
+  }
 }
