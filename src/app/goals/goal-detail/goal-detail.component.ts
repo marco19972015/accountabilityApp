@@ -11,11 +11,13 @@ export class GoalDetailComponent {
   @Input() goalName = '';
 
   // Defining a new component property that uses the Output decorator 
-  @Output() currentGoal  = new EventEmitter  // NOTE EventEmitter is an extension of RxJS
+  // we add a generic to declare the type of data that would be passed into the goal list component
+  @Output() currentGoal  = new EventEmitter<string>();  // NOTE EventEmitter is an extension of RxJS
 
   // Create the show method 
   show() {
     // Allows us to show our selected goal
-    this.currentGoal.emit();
+    // We have to now pass in the string value so we add an instance of goalName
+    this.currentGoal.emit(this.goalName);
   }
 }
