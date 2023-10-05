@@ -9,4 +9,10 @@
 <!-- our goalName gets passed down from our selectedGoal clickevent (This approach is called input binding )-->
 <!-- our goalNames gets passed down into our detial component and html through our Input artifact -->
 <!-- The $event object is a reserved keyword in ng that contains the payload of an event emitter from an output binding -->
-<app-goal-detail [goalName]="selectedGoal" (currentGoal)="onShow($event)"></app-goal-detail>
+<app-goal-detail 
+#goal
+[goalName]="selectedGoal" 
+(currentGoal)="onShow($event)"
+></app-goal-detail> 
+<!-- By adding a has symbol we can access the members of the component directly and even bind it in other locations of the template -->
+<span>{{goal.goalName}}</span>
