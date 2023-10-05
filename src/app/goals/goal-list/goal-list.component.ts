@@ -16,4 +16,6 @@ export class GoalListComponent {
   onShow(goalName:string) {  // since we are receiving data we need to add a parameter of type string (due to our generic)
     window.alert(`You just selected ${this.selectedGoal}`)
   }
+
+
 }
