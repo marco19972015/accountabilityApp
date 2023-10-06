@@ -1,5 +1,5 @@
 // adding the Input, Output, EventEmitter artifacts
-import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit ,Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-goal-detail',
@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angu
   styleUrls: ['./goal-detail.component.css'],
   encapsulation: ViewEncapsulation.None  // setting this to none allows our css to leak out into other components
 })
-export class GoalDetailComponent {
+export class GoalDetailComponent implements OnInit{
   // Defining a goalName property that uses the Input decorator and initailized to an empty string
   @Input() goalName = '';
 
@@ -21,4 +21,18 @@ export class GoalDetailComponent {
     // We have to now pass in the string value so we add an instance of goalName
     this.currentGoal.emit(this.goalName);
   }
+
+  // with ngOnInit we can see what is in the selectedGoal variable
+  ngOnInit(): void {
+    console.log(`goalName is ${this.goalName} in the ngOnInit`);
+  }
+
+  // This will show the current name in our goalName variable using a constructor
+  constructor() {  // We should keep constructors empty and devoid of logic other than seeting initial variables
+    console.log(`goalName is ${this.goalName} in the constructor`);
+  }
+
+
+
+
 }

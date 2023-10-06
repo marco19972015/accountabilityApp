@@ -10,7 +10,7 @@ export class GoalListComponent {
   // selectedGoal:string = ''
 
   // Create a selectedGoal property set to an empty string
-  selectedGoal = '';
+  selectedGoal = 'Create template for app';
 
   // Create method to create a window alert that shows us our selected goal
   onShow(goalName:string) {  // since we are receiving data we need to add a parameter of type string (due to our generic)
