@@ -44,9 +44,4 @@ export class GoalDetailComponent implements OnChanges{
     console.log(`goalName is ${this.goalName} in the constructor`);
   }
   */
-
-
-
-
-
 }

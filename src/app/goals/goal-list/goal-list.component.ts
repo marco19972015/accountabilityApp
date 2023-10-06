@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { GoalDetailComponent } from '../goal-detail/goal-detail.component';
 
 @Component({
   selector: 'app-goal-list',
   templateUrl: './goal-list.component.html',
   styleUrls: ['./goal-list.component.css']
 })
-export class GoalListComponent {
+export class GoalListComponent implements AfterViewInit{
   // why not this?
   // selectedGoal:string = ''
 
@@ -17,5 +18,13 @@ export class GoalListComponent {
     window.alert(`You just selected ${this.selectedGoal}`)
   }
 
+  //
+  @ViewChild(GoalDetailComponent) goalDetail: GoalDetailComponent | undefined;
 
+
+  ngAfterViewInit(): void {
+    if (this.goalDetail) {
+      console.log(this.goalDetail.goalName);
+    }
+  }
 }
