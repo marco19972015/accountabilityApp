@@ -29,7 +29,7 @@ export class GoalDetailComponent implements OnChanges{
     if (!product.isFirstChange()){
       const oldValue = product.previousValue;
       const newValue = product.currentValue;
-      console.log(`Product changed from ${oldValue} to ${newValue}`);
+      console.log(`Goal has changed from ${oldValue} to ${newValue}`);
     }
   }
 
